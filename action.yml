@@ -31,9 +31,7 @@ runs:
       java-version: ${{ inputs.java-version }}
       distribution: 'adopt'
   - name: Generate Javadoc
-    run: | 
-      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:fix --settings settings.xml
-      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:javadoc --settings settings.xml
+    run: mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:aggregate
     shell: bash
   - name: Deploy 🚀
     uses: JamesIves/github-pages-deploy-action@v4.4.1
