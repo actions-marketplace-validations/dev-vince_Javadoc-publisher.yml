@@ -31,10 +31,10 @@ runs:
       java-version: ${{ inputs.java-version }}
       distribution: 'adopt'
   - name: Generate Javadoc
-    run: mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:aggregate
+    run: |
+      apt-get update && apt-get install -y rsync
+      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:aggregate
     shell: bash
-  - name: Install rsync 📚
-    run: apt-get update && apt-get install -y rsync
   - name: Deploy 🚀
     uses: JamesIves/github-pages-deploy-action@v4.4.1
     with:
