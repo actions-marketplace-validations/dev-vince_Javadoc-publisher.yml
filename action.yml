@@ -32,9 +32,8 @@ runs:
       distribution: 'adopt'
   - name: Generate Javadoc
     run: | 
-      mvn --settings settings.xml clean install
-      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:fix
-      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:javadoc
+      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:fix --settings settings.xml
+      mvn org.apache.maven.plugins:maven-javadoc-plugin:3.4.1:javadoc --settings settings.xml
     shell: bash
   - name: Deploy 🚀
     uses: JamesIves/github-pages-deploy-action@v4.4.1
